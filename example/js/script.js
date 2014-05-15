@@ -1,5 +1,6 @@
 
-
+var x,y,z;
+$(".btn").attr("disabled",true);
 $('#textInput').keyup(function () {
 
 
@@ -7,13 +8,19 @@ $('#textInput').keyup(function () {
 		{ 
 			"pattern": "^[A-Z]\\w+",
 			"onValid": function( that ) {
-				//do sth with that
+				x=1;
 				$(that).parent().removeClass("has-error");
 				$(that).parent().addClass("has-success");
+				if(x+y+z===3){
+					$(".btn").attr("disabled",false);
+				}
 			},
 			"onNotValid": function( that ) {
-				//do sth with that
+				x=0;
 				$(that).parent().addClass("has-error");
+				if(x+y+z!=3){
+					$(".btn").attr("disabled",true);
+				}
 			}		
 		}
 	);//.css({"background": "red"});
@@ -26,13 +33,19 @@ $('#emailInput').keyup(function () {
 	$('#emailInput').myValidation("email", 
 		{ 
 			"onValid": function( that ) {
-				//do sth with that
+				y=1;
 				$(that).parent().removeClass("has-error");
 				$(that).parent().addClass("has-success");
+				if(x+y+z===3){
+					$(".btn").attr("disabled",false);
+				}
 			},
 			"onNotValid": function( that ) {
-				//do sth with that
+				y=0;
 				$(that).parent().addClass("has-error");
+				if(x+y+z!=3){
+					$(".btn").attr("disabled",true);
+				}
 			}		
 		}
 	);//.css({"background": "red"});
@@ -47,13 +60,19 @@ $('#passwordInput').keyup(function () {
 			"small": true,
 			"big": true,
 			"onValid": function( that ) {
-				//do sth with that
+				z=1;
 				$(that).parent().removeClass("has-error");
 				$(that).parent().addClass("has-success");
+				if(x+y+z===3){
+					$(".btn").attr("disabled",false);
+				}
 			},
 			"onNotValid": function( that ) {
-				//do sth with that
+				z=0;
 				$(that).parent().addClass("has-error");
+				if(x+y+z!=3){
+					$(".btn").attr("disabled",true);
+				}
 			}		
 		}
 	);//.css({"background": "red"});

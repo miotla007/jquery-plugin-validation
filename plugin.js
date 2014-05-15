@@ -1,10 +1,7 @@
 (function( $ ){
 
   var methods = {
-    init: function ( options ) {
-      //init logic
-      // var settings = $.extend( { text: 'Podaj wartość' }, options );
-    },
+
     regexp: function ( options ) {
       //console.log(this);
       //console.log(options);
@@ -15,25 +12,16 @@
        var isValid = true;
 
         if(options.pattern){
-          if(options.modifiers){
-            pat = new RegExp(options.pattern, options.modifiers);
-          } else {
             pat = new RegExp(options.pattern);          
-          }
-          //console.log(pat.test(val));
           if(!pat.test(val)){
             isValid = false;
           }
-
         }
-
         if(isValid){
           options.onValid(this);
         } else {
           options.onNotValid(this);
         }
-      
-
       });
 
     },
